@@ -1,16 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/styles/components/Header.scss';
 
 import logo from '../assets/static/logo-platzi-video-BW2.png';
 import userIcon from '../assets/static/user-icon.png';
 
 const profile = 'Perfil';
-const account = 'Cueanta';
-const logOut = 'Cerrar Sesión';
+const account = 'Cuenta';
+const logIn = 'Iniciar Sesión';
 
 const Header = () => (
 	<header className='header'>
-		<img className='header__img' src={logo} alt='Platzi Video' />
+		<Link to='/'>
+			<img className='header__img' src={logo} alt='Platzi Video' />
+		</Link>
+
 		<div className='header__menu'>
 			<div className='header__menu--profile'>
 				<img src={userIcon} alt='user icon' />
@@ -18,10 +22,10 @@ const Header = () => (
 			</div>
 			<ul>
 				<li>
-					<a href='/'>{account}</a>
+					<Link to='Login'>{account}</Link>
 				</li>
 				<li>
-					<a href='/'>{logOut}</a>
+					<Link to='Register'>{logIn}</Link>
 				</li>
 			</ul>
 		</div>
